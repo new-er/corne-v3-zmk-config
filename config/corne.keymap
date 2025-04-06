@@ -21,6 +21,190 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <13 22>;
+            layers = <0 1 2>;
+        };
+
+        linux_compose_key {
+            bindings = <&kp CAPS>;
+            key-positions = <29 30>;
+            layers = <0>;
+        };
+
+        bootloader_left {
+            bindings = <&bootloader>;
+            key-positions = <6 35>;
+            layers = <0>;
+        };
+
+        bootloader_right {
+            bindings = <&bootloader>;
+            key-positions = <24 5>;
+            layers = <0>;
+        };
+
+        alt_code_vowel_a {
+            bindings = <&alt_code_vowel_a>;
+            key-positions = <39 14>;
+            layers = <0>;
+        };
+
+        alt_code_vowel_u {
+            bindings = <&alt_code_vowel_mutation_u>;
+            key-positions = <38 7>;
+            layers = <0>;
+        };
+
+        alt_code_vowel_o {
+            bindings = <&alt_code_vowel_mutation_o>;
+            key-positions = <38 9>;
+            layers = <0>;
+        };
+
+        alt_code_vowel_cap_a {
+            bindings = <&alt_code_vowel_cap_a>;
+            key-positions = <39 14 22>;
+            layers = <0>;
+        };
+
+        alt_code_vowel_cap_u {
+            bindings = <&alt_code_vowel_mutation_cap_u>;
+            key-positions = <38 7 13>;
+            layers = <0>;
+        };
+
+        alt_code_vowel_cap_o {
+            bindings = <&alt_code_vowel_mutation_cap_o>;
+            key-positions = <38 9 13>;
+            layers = <0>;
+        };
+
+        alt_code_euro {
+            bindings = <&alt_code_euro_symbol>;
+            key-positions = <39 3>;
+            layers = <0>;
+        };
+    };
+
+    macros {
+        alt_code_vowel_a: alt_code_vowel_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_NUMBER_2 &kp KP_N2 &kp KP_NUMBER_8>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "ALT_CODE_VOWEL_A";
+        };
+
+        alt_code_vowel_mutation_o: alt_code_vowel_mutation_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_NUMBER_2 &kp KP_N4 &kp KP_N6>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "ALT_CODE_VOWEL_MUTATION_O";
+        };
+
+        alt_code_vowel_mutation_u: alt_code_vowel_mutation_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_NUMBER_2 &kp KP_N5 &kp KP_N2>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "ALT_CODE_VOWEL_MUTATION_U";
+        };
+
+        alt_code_vowel_mutation_s: alt_code_vowel_mutation_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_NUMBER_2 &kp KP_N2 &kp KP_N3>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "ALT_CODE_VOWEL_MUTATION_S";
+        };
+
+        alt_code_vowel_cap_a: alt_code_vowel_cap_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N6>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "ALT_CODE_VOWEL_CAP_A";
+        };
+
+        alt_code_vowel_mutation_cap_o: alt_code_vowel_mutation_cap_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N1 &kp KP_N5 &kp KP_N3>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "ALT_CODE_VOWEL_MUTATION_CAP_O";
+        };
+
+        alt_code_vowel_mutation_cap_u: alt_code_vowel_mutation_cap_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_NUMBER_2 &kp KP_N2 &kp KP_N0>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "ALT_CODE_VOWEL_MUTATION_CAP_U";
+        };
+
+        alt_code_euro_symbol: alt_code_euro_symbol {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "ALT_CODE_EURO_SYMBOL";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -62,10 +246,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK      &kp LPAR          &kp RPAR           &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp TAB  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK      &kp LPAR          &kp RPAR           &kp BSPC
+&trans   &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp GRAVE
+&trans   &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp TILDE
+                           &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
             >;
         };
 
