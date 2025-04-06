@@ -38,12 +38,6 @@
 
         bootloader_left {
             bindings = <&bootloader>;
-            key-positions = <6 35>;
-            layers = <0>;
-        };
-
-        bootloader_right {
-            bindings = <&bootloader>;
             key-positions = <24 5>;
             layers = <0>;
         };
