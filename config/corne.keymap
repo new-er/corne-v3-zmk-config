@@ -83,6 +83,11 @@
             key-positions = <39 3>;
             layers = <0>;
         };
+
+        vowel_mutation_s {
+            bindings = <&alt_code_vowel_mutation_s>;
+            key-positions = <14 39>;
+        };
     };
 
     macros {
