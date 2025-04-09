@@ -44,7 +44,7 @@
 
         alt_code_vowel_a {
             bindings = <&alt_code_vowel_a>;
-            key-positions = <39 14>;
+            key-positions = <39 13>;
             layers = <0>;
         };
 
